@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="MIB Portões Automáticos. Há 12 anos oferecendo segurança e tranquilidade na fabricação e instalação de portões na Zona Norte de SP e interior.">
+    <meta name="author" content="MIB Portões Automáticos">
+    <meta name="robots" content="noindex, nofollow">
+    <title>MIB Portões Automáticos | Segurança e Qualidade</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- SEO / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MIB Portões Automáticos EIRELI",
+      "image": "logo_mib_v01_png.png",
+      "telephone":["+551124312756", "+5511967565008"],
+      "email": "contato@mibportoesautomaticos.com.br",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Abilio Pedro Ramos, 600 - Vila Nilo",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "description": "Fabricação, automação e instalação de portões basculantes, deslizantes, pivotantes, portas de enrolar e gradis."
+    }
+    </script>
+
+    <!-- Fontes e Tailwind -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#DD4343',
+                            dark: '#b33636',
+                            accent: '#f2a500'
+                        },
+                        dark: {
+                            DEFAULT: '#111416',
+                            soft: '#272e34'
+                        }
+                    },
+                    fontFamily: {
+                        sans:['Rubik', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 25px rgba(221, 67, 67, 0.4)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(39, 46, 52, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #ffffff, #DD4343);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .img-hover-zoom { overflow: hidden; }
+        .img-hover-zoom img { transition: transform .8s ease; }
+        .img-hover-zoom:hover img { transform: scale(1.1); }
+        
+        /* Utilitários para proporção vertical de vídeo */
+        .aspect-w-9 { position: relative; padding-bottom: 177.77%; /* 16:9 ratio (16/9 = 1.777) */ }
+        .aspect-w-9 > video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    </style>
+</head>
+
+<body class="font-sans text-gray-300 bg-dark antialiased selection:bg-brand selection:text-white">
+
+    <!-- Header Glassmorphism -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/5" id="main-header">
+        <div class="absolute inset-0 bg-dark/80 backdrop-blur-md"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex justify-between items-center h-24">
+                <a href="#" class="flex-shrink-0 transform hover:scale-105 transition-transform">
+                    <img src="logo_mib.png" alt="MIB Portões Logo" class="h-10 sm:h-12 object-contain filter drop-shadow-lg">
+                </a>
+                
+                <nav class="hidden md:flex space-x-8 items-center font-heading font-semibold text-sm tracking-wider uppercase">
+                    <a href="#sobre" class="text-white hover:text-brand transition-colors">Sobre Nós</a>
+                    <a href="#produtos" class="text-white hover:text-brand transition-colors">Produtos</a>
+                    <a href="#servicos" class="text-white hover:text-brand transition-colors">Serviços</a>
+                    <a href="#contato" class="text-white hover:text-brand transition-colors">Contato</a>
+                    <a href="https://wa.me/5511967565008" target="_blank" class="bg-brand hover:bg-brand-dark text-white px-6 py-3 rounded-full shadow-glow transition-all transform hover:-translate-y-1">
+                        Orçamento Rápido
+                    </a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path id="icon-menu" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-dark-soft border-b border-white/10 font-heading">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#sobre" class="block text-white hover:text-brand font-semibold">Sobre Nós</a>
+                <a href="#produtos" class="block text-white hover:text-brand font-semibold">Produtos</a>
+                <a href="#servicos" class="block text-white hover:text-brand font-semibold">Serviços</a>
+                <a href="#contato" class="block text-white hover:text-brand font-semibold">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Imagem Mais Visível) -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-[90vh]">
+        <div class="absolute inset-0">
+            <!-- Imagem com maior opacidade para ficar bem visível -->
+            <img src="foto2.png" alt="Serralheiro MIB" class="w-full h-full object-cover opacity-70">
+            <!-- Gradiente escuro focado na esquerda para dar leitura ao texto -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#111416] via-[#111416]/80 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-brand font-semibold mb-6 uppercase tracking-widest text-xs border border-brand/30">
+                    <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+                    12 Anos de Tradição na Zona Norte SP
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-6 drop-shadow-lg">
+                    A sua <span class="text-gradient">segurança e tranquilidade</span> em primeiro lugar.
+                </h1>
+                <p class="text-lg lg:text-xl text-gray-200 mb-10 leading-relaxed font-light drop-shadow-md">
+                    Especialistas em fabricação, automação e instalação de portões. Projetos personalizados com tecnologia MIG e pintura eletrostática.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#produtos" class="bg-brand hover:bg-brand-dark text-white font-bold text-center py-4 px-8 rounded-full shadow-glow transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                        Ver Nossos Modelos
+                    </a>
+                    <a href="#sobre" class="glass-panel text-white hover:bg-white/10 font-bold text-center py-4 px-8 rounded-full transition-all flex items-center justify-center">
+                        Conheça a MIB
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós & Vídeo Real da Empresa -->
+    <section id="sobre" class="py-24 bg-dark-soft relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Coluna de Texto -->
+                <div>
+                    <h2 class="text-brand font-heading font-bold tracking-widest uppercase text-sm mb-2">Sobre Nós</h2>
+                    <h3 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6">Excelência em Serralheria</h3>
+                    <div class="space-y-4 text-gray-400 font-light leading-relaxed">
+                        <p>A <strong class="text-white">MIB Portões</strong> possui uma experiência consolidada de 12 anos no setor, destacando-se na fabricação, automação e instalação de uma variedade de portões.</p>
+                        <p>Estrategicamente situada na Zona Norte da cidade de São Paulo, atendemos tanto a capital quanto o interior.</p>
+                        <p>Nosso diferencial reside na colaboração estreita com engenheiros e arquitetos. Utilizamos materiais de primeira linha, como tubos e ferros galvanizados, e tecnologia de solda eletrônica (MIG) para entregar projetos com perfeição.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 border-t border-white/10 pt-10">
+                        <div>
+                            <div class="w-12 h-12 bg-brand/10 text-brand rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Missão</h4>
+                            <p class="text-xs text-gray-400">Oferecer soluções completas, desde a consultoria à instalação de alta qualidade.</p>
+                        </div>
+                        <div>
+                            <div class="w-12 h-12 bg-brand/10 text-brand rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Visão</h4>
+                            <p class="text-xs text-gray-400">Ser referência em portões automáticos por soluções inovadoras e excelência.</p>
+                        </div>
+                        <div>
+                            <div class="w-12 h-12 bg-brand/10 text-brand rounded-lg flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Valores</h4>
+                            <p class="text-xs text-gray-400">Qualidade, Segurança, Comprometimento e Respeito aos clientes e parceiros.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O Lugar do Vídeo (Já Existia o espaço, agora com o src definido) -->
+                <div class="relative glass-panel p-2 rounded-3xl shadow-2xl">
+                    <div class="aspect-w-9 rounded-2xl overflow-hidden bg-black relative">
+                        <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                            <source src="video-final-mib.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                        <div class="absolute bottom-6 left-6 right-6 text-center bg-black/60 backdrop-blur px-4 py-3 rounded-xl border border-white/10 z-10">
+                            <p class="text-white font-bold text-sm">Estruturas robustas, feitas para durar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vitrine de Produtos com Background Sutil (foto3.png) -->
+    <section id="produtos" class="py-24 relative overflow-hidden">
+        
+        <!-- Fundo Sutil foto3.png -->
+        <div class="absolute inset-0 z-0">
+            <img src="foto3.png" alt="Fundo MIB Produtos" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-dark/80 backdrop-blur-[2px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand font-heading font-bold tracking-widest uppercase text-sm mb-2">Portfólio Exclusivo</h2>
+                <h3 class="text-3xl md:text-5xl font-heading font-bold text-white mb-4">Projetos Feitos Sob Medida</h3>
+                <p class="text-gray-300">Clique sobre as imagens para ampliar e ver o catálogo de modelos disponíveis.</p>
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Basculante -->
+                <div onclick="openLightbox('modelo-basculante.png')" class="glass-panel rounded-2xl overflow-hidden group cursor-pointer img-hover-zoom border border-white/5 relative">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="basculante.png" alt="Portões Basculantes" loading="lazy" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        <!-- Ícone Lupa no Hover -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                            <div class="bg-brand p-3 rounded-full shadow-glow">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 relative -mt-10">
+                        <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Basculantes</h4>
+                        <p class="text-sm text-gray-300">Levantamento suave, não ocupa espaço nas laterais. Perfeito para fachadas modernas e garagens compactas.</p>
+                    </div>
+                </div>
+
+                <!-- Pivotante -->
+                <div onclick="openLightbox('modelo-pivotante.png')" class="glass-panel rounded-2xl overflow-hidden group cursor-pointer img-hover-zoom border border-white/5 relative">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="pivotante.png" alt="Portões Pivotantes" loading="lazy" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                            <div class="bg-brand p-3 rounded-full shadow-glow">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 relative -mt-10">
+                        <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Pivotantes</h4>
+                        <p class="text-sm text-gray-300">Abertura central (duas folhas) com design clássico e imponente, operando através de motores de alta potência.</p>
+                    </div>
+                </div>
+
+                <!-- Deslizante -->
+                <div onclick="openLightbox('modelo-deslizante.png')" class="glass-panel rounded-2xl overflow-hidden group cursor-pointer img-hover-zoom border border-white/5 relative">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="deslizante.png" alt="Portões Deslizantes" loading="lazy" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                            <div class="bg-brand p-3 rounded-full shadow-glow">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 relative -mt-10">
+                        <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Deslizantes</h4>
+                        <p class="text-sm text-gray-300">Abertura lateral sobre trilhos. Excelente para terrenos amplos, oferecendo estética contínua e muita segurança.</p>
+                    </div>
+                </div>
+
+                <!-- Guilhotina -->
+                <div onclick="openLightbox('modelo-guilhotina.png')" class="glass-panel rounded-2xl overflow-hidden group cursor-pointer img-hover-zoom border border-white/5 relative">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="guilhotina.png" alt="Portões Guilhotina" loading="lazy" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                            <div class="bg-brand p-3 rounded-full shadow-glow">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 relative -mt-10">
+                        <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Guilhotina</h4>
+                        <p class="text-sm text-gray-300">Sistema que eleva as folhas verticalmente uma sobre a outra. Otimiza espaços onde o teto e laterais são limitados.</p>
+                    </div>
+                </div>
+
+                <!-- Enrolar -->
+                <div onclick="openLightbox('modelo-enrolar.png')" class="glass-panel rounded-2xl overflow-hidden group cursor-pointer img-hover-zoom border border-white/5 relative">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="enrolar.png" alt="Portas de Enrolar" loading="lazy" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                            <div class="bg-brand p-3 rounded-full shadow-glow">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 relative -mt-10">
+                        <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Portas de Enrolar</h4>
+                        <p class="text-sm text-gray-300">Ideal para lojas, comércios e docas. Praticidade extrema, chapas de aço resistentes e máxima segurança anti-arrombamento.</p>
+                    </div>
+                </div>
+
+                <!-- Gradis -->
+                <div onclick="openLightbox('modelo-gradis.png')" class="glass-panel rounded-2xl overflow-hidden group cursor-pointer img-hover-zoom border border-white/5 relative">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="gradis.png" alt="Gradis Metálicos" loading="lazy" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                            <div class="bg-brand p-3 rounded-full shadow-glow">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 relative -mt-10">
+                        <h4 class="text-2xl font-bold text-white mb-2 group-hover:text-brand transition-colors">Gradis</h4>
+                        <p class="text-sm text-gray-300">Cercamentos estéticos e funcionais para condomínios e indústrias, mantendo visibilidade e circulação de ar.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Lightbox (Escondido por padrão) -->
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 transition-opacity opacity-0 duration-300" onclick="closeLightbox()">
+        <button class="absolute top-4 right-6 text-white hover:text-brand text-5xl font-light transition-colors z-50" aria-label="Fechar" onclick="closeLightbox()">&times;</button>
+        <div class="relative max-w-5xl max-h-full flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Modelos de Portão" class="max-w-full max-h-[85vh] rounded-xl shadow-2xl transform scale-95 transition-transform duration-300 object-contain" onclick="event.stopPropagation()">
+            <p class="text-gray-300 mt-4 text-sm font-bold bg-dark px-4 py-2 rounded-full shadow-glow animate-pulse">Tire print do seu modelo favorito e envie no nosso WhatsApp!</p>
+        </div>
+    </div>
+
+    <!-- Serviços Oferecidos -->
+    <section id="servicos" class="py-24 bg-dark-soft border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-5xl font-heading font-bold text-white mb-4">Serviços Especializados</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto">Equipe técnica qualificada para manter seu patrimônio sempre operante.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-panel p-6 rounded-2xl border-t-4 border-t-brand hover:-translate-y-2 transition-transform">
+                    <h4 class="text-lg font-bold text-white mb-3">Manutenção e Soldas</h4>
+                    <p class="text-gray-400 text-sm">Reparos estruturais, solda MIG e revitalização completa com pintura eletrostática.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border-t-4 border-t-brand hover:-translate-y-2 transition-transform">
+                    <h4 class="text-lg font-bold text-white mb-3">Instalação de Motores</h4>
+                    <p class="text-gray-400 text-sm">Automação com motores rápidos e eficientes para todos os modelos de portões.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border-t-4 border-t-brand hover:-translate-y-2 transition-transform">
+                    <h4 class="text-lg font-bold text-white mb-3">Codificação de Controles</h4>
+                    <p class="text-gray-400 text-sm">Configuração de placas e novos controles remotos para residências e condomínios.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border-t-4 border-t-brand hover:-translate-y-2 transition-transform">
+                    <h4 class="text-lg font-bold text-white mb-3">Travas & Cabos de Aço</h4>
+                    <p class="text-gray-400 text-sm">Instalação de travas eletromagnéticas de segurança e substituição de cabos rompidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contato -->
+        <section id="contato" class="py-24 relative overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('foto4.png');">
+    
+        <div class="absolute inset-0 bg-black/90"></div>
+
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand rounded-full filter blur-[150px] opacity-20 pointer-events-none z-0"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl font-heading font-black text-white mb-6">Dê um toque de segurança e modernidade.</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+                Solicite um orçamento sem compromisso e conheça a qualidade da <strong class="text-white">MIB Portões Automáticos</strong>.
+            </p>
+            
+            <a href="https://wa.me/5511967565008?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento!" target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand text-white font-extrabold text-xl py-5 px-10 rounded-full shadow-glow hover:bg-brand-dark transition-all transform hover:scale-105">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                CHAMAR NO WHATSAPP
+            </a>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/10 pt-8">
+                <div class="text-center md:text-right">
+                    <p class="text-brand-accent font-bold text-lg mb-1">Telefones:</p>
+                    <p class="text-white font-medium">☎ (11) 2431-2756</p>
+                    <p class="text-white font-medium">☎ (11) 96756-5008</p>
+                    <p class="text-brand-accent font-bold text-lg mt-4 mb-1">E-mail:</p>
+                    <a href="mailto:contato@mibportoesautomaticos.com.br" class="text-white hover:text-brand-accent transition-colors">contato@mibportoesautomaticos.com.br</a>
+                </div>
+
+                <div class="text-center md:text-left border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-8">
+                    <p class="text-brand-accent font-bold text-lg mb-1">Nossa Sede:</p>
+                    <p class="text-white leading-relaxed">
+                        Rua Abilio Pedro Ramos, 600<br>
+                        Vila Nilo - São Paulo - SP
+                    </p>
+                    <a href="https://goo.gl/maps/search/Rua+Abilio+Pedro+Ramos,+600+São+Paulo" target="_blank" class="inline-block mt-3 text-sm text-gray-400 hover:text-white underline decoration-brand-accent underline-offset-4">
+                        Ver no mapa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa e Footer -->
+    <footer class="bg-dark border-t border-white/10 pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-12 pb-12">
+            <div>
+                <img src="logo_mib.png" alt="MIB Portões Logo" class="h-10 mb-6">
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                    MIB Portões Automáticos EIRELI<br>
+                    CNPJ: 21.985.128/0001-21
+                </p>
+                <div class="flex items-center gap-3 text-gray-400 text-sm mb-3">
+                    <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span>Rua Abilio Pedro Ramos, 600<br>Vila Nilo - São Paulo - SP</span>
+                </div>
+                <div class="flex items-center gap-3 text-gray-400 text-sm">
+                    <svg class="w-5 h-5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <a href="mailto:contato@mibportoesautomaticos.com.br" class="hover:text-white transition">contato@mibportoesautomaticos.com.br</a>
+                </div>
+                <!-- Links Úteis -->
+                <div class="mt-6 flex gap-4 text-xs font-heading">
+                    <a href="privacidade.html" class="text-brand hover:text-white transition">Privacidade</a>
+                    <a href="termos.html" class="text-brand hover:text-white transition">Termos de Uso</a>
+                    <a href="lgpd.html" class="text-brand hover:text-white transition">Portal LGPD</a>
+                </div>
+            </div>
+
+            <!-- Mapa Google Iframe -->
+            <div class="lg:col-span-2 overflow-hidden rounded-2xl border border-white/5 glass-panel">
+                <iframe class="w-full h-64 grayscale contrast-125 opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500" 
+                    src="https://maps.google.com/maps?q=Rua%20Abilio%20Pedro%20Ramos%20-%20600%20Vila%20Nilo%20-%20S%C3%A3o%20Paulo%20-%20SP&t=m&z=15&output=embed" 
+                    title="Localização MIB Portões" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 py-6 bg-black/50 text-center text-xs text-gray-500 flex flex-col md:flex-row justify-center items-center gap-2">
+            <p>© 2026 Todos os Direitos Reservados ao MIB Portões Automáticos.</p>
+            <p>Desenvolvido por: <a href="http://redesigner.com.br/" target="_blank" class="text-white font-bold hover:text-brand">Redesigner PPM</a></p>
+        </div>
+    </footer>
+
+    <!-- LGPD MODAL -->
+    <div id="lgpd-modal" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-8 md:w-96 glass-panel border border-white/10 rounded-2xl p-6 z-[100] transform translate-y-[150%] transition-transform duration-700 shadow-2xl">
+        <h4 class="text-white font-bold mb-2">Privacidade e Cookies</h4>
+        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+            Utilizamos cookies essenciais para oferecer a melhor experiência, analisar o uso do site e segurança. Ao continuar, você concorda com nossas políticas.
+        </p>
+        <div class="flex gap-3">
+            <button id="accept-cookies" class="flex-1 bg-brand hover:bg-brand-dark text-white text-xs font-bold py-2 rounded-lg transition-colors">Aceitar Tudo</button>
+            <a href="cookies.html" class="flex-1 bg-white/10 hover:bg-white/20 text-white text-xs font-bold py-2 rounded-lg transition-colors text-center flex items-center justify-center">Saber mais</a>
+        </div>
+    </div>
+
+    <!-- Botão Fixo WhatsApp -->
+    <a href="https://wa.me/5511967565008" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 hover:-translate-y-2 transition-all duration-300 group">
+        <svg class="w-8 h-8 group-hover:animate-bounce" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+
+    <!-- Scripts (Menu, LGPD, Lightbox) -->
+    <script>
+        // Menu Mobile Toggle
+        const btnMenu = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+
+        btnMenu.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                iconMenu.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                iconMenu.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                iconMenu.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+
+        // Blur Header no Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) header.classList.add('shadow-lg');
+            else header.classList.remove('shadow-lg');
+        });
+
+        // LGPD Box
+        setTimeout(() => {
+            if(!localStorage.getItem('mib_lgpd_accepted')) {
+                document.getElementById('lgpd-modal').classList.remove('translate-y-[150%]');
+            }
+        }, 2000);
+
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('mib_lgpd_accepted', 'true');
+            document.getElementById('lgpd-modal').classList.add('translate-y-[150%]');
+        });
+
+        // Lógica do Lightbox Vanilla JS
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            
+            img.src = imageSrc;
+            lightbox.classList.remove('hidden');
+            
+            // Permite que o display:block aja antes da opacidade para ter transição suave
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                img.classList.remove('scale-95');
+                img.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            
+            lightbox.classList.add('opacity-0');
+            img.classList.remove('scale-100');
+            img.classList.add('scale-95');
+            
+            // Aguarda a transição de opacidade/escala para adicionar display:none
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                img.src = '';
+            }, 300);
+        }
+
+        // Fechar com a tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !document.getElementById('lightbox').classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
+<!--- END OF FILE index.html --- !>
